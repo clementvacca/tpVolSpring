@@ -12,12 +12,12 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="formationJpaSpring.dao"></context:component-scan>
-	<context:component-scan base-package="formationJpaSpring.service"></context:component-scan>
+	<context:component-scan base-package="tpVolSpring.repository"></context:component-scan>
+	<context:component-scan base-package="tpVolSpring.entity"></context:component-scan>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver"></property>
-		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/formation_spring"></property>
+		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/tpVol_spring"></property>
 		<property name="username" value="postgres"></property>
 		<property name="password" value="root"></property>
 		<property name="initialSize" value="5"></property>
@@ -40,7 +40,7 @@
 		</property>
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager"/>
-	<jpa:repositories base-package="formationJpaSpring.repository"></jpa:repositories>
+	<jpa:repositories base-package="tpVolSpring.repository"></jpa:repositories>
 	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"></bean>
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
