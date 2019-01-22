@@ -9,7 +9,4 @@ public class CompagnieAerienneService {
 	@Autowired
 	private CompagnieAerienneRepository compagniAerienneRepository;
 	
-	private void findByNomCompagnieAerienne() {
-		
-	}
 }
