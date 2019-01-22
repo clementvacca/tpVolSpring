@@ -12,5 +12,5 @@ import tpVolSpring.entity.Vol;
 
 public interface VolRepository extends JpaRepository<Vol, Long>{
 //	@Query("select ca from CompagnieAerienne ca left join fetch ca.CompagnieAerienneVol where ca.CompagnieAerienneVol.numero=:idVol")
-	public List<CompagnieAerienne> findCompagnieAerienne(/*@Param("idVol") Long idVol*/);
+//	@Query("select v from Vol v left join fetch v.CompagnieAerienneVol cav left join fetch cav.CompagnieAerienneVolPk cavpk left join fetch cavpk.CompagnieAerienne ca where ca.idCompagnieAerienne=:idVol")
 }

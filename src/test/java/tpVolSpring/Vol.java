@@ -12,18 +12,20 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import tpVolSpring.entity.CompagnieAerienne;
+import tpVolSpring.entity.CompagnieAerienneVol;
 import tpVolSpring.repository.CompagnieAerienneRepository;
+import tpVolSpring.repository.CompagnieAerienneVolRepository;
 import tpVolSpring.repository.VolRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"/applicationContext.xml"})
 public class Vol {
 		@Autowired
-		private VolRepository volRepository;
+		private CompagnieAerienneVolRepository compagnieAerienneVolRepository;
 
 	@Test
 	public void test() {
-		List<CompagnieAerienne> ca=volRepository.findCompagnieAerienne();
+		List<CompagnieAerienneVol> ca=compagnieAerienneVolRepository.findCompagnieAerienne((long) 1);
 		assertNotNull(ca);
 
 	}

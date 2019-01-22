@@ -17,9 +17,9 @@ import javax.persistence.Version;
 
 @Entity
 @Table(name="compagnieAerienne")
-@NamedQueries({
-	@NamedQuery(name="CompagnieAerienne.findCompagnieAerienne", query="")
-})
+//@NamedQueries({
+//	@NamedQuery(name="CompagnieAerienne.findCompagnieAerienne", query="")
+//})
 //select ca from CompagnieAerienne ca left join fetch ca.compagnieAerienneVol left join fetch  where idVol=1
 //cav where cav.compagnieAerienneVolPk=(select v.compagnieAerienneVol.compagnieAerienneVolPk from Vol v where v.id=:idVol)
 //ca left join fetch ca.compagnieAerienneVol where ca.compagnieAerienneVol.numero=:idVol
