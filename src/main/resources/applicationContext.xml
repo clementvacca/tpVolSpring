@@ -12,8 +12,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="tpVolSpring.service"></context:component-scan>
-	<context:component-scan base-package="tpVolSpring.entity"></context:component-scan>
+	<context:component-scan base-package="tpVolSpring.service, tpVolSpring.entity, tpVolSpring.repository"></context:component-scan>
+<!-- 	<context:component-scan base-package="tpVolSpring.entity"></context:component-scan>
+	<context:component-scan base-package="tpVolSpring.repository"></context:component-scan> -->
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver"></property>
