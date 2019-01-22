@@ -2,27 +2,28 @@ package tpVolSpring;
 
 import static org.junit.Assert.*;
 
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import tpVolSpring.entity.Login;
 import tpVolSpring.repository.LoginRepository;
-
 
 @RunWith(SpringJUnit4ClassRunner.class) // permet de lancer les test unitaire dans une classe spring
 @ContextConfiguration(locations = {"/applicationContext.xml" })
-public class Login {
+public class LoginTest {
 	
 	@Autowired
 	private LoginRepository loginRepository;
 	
 	@Test
 	public void insertTest() {
-//		Login log=new Login("Clement","12348",false);
-//		daoPersonne.insert(eleve);
-		assertNotNull(loginRepository);
+		Login log = new Login("adqz", "motDePasse", true);
+		assertNotNull(loginRepository.save(log));
 //		assertNotNull(daoPersonne.findByKey(eleve.getNumero()));
 	}
 	

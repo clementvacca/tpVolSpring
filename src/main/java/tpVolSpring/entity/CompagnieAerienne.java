@@ -7,14 +7,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
 @Entity
 @Table(name="compagnieAerienne")
+//@NamedQueries({
+//	@NamedQuery(name="CompagnieAerienne.findCompagnieAerienne", query="")
+//})
+//select ca from CompagnieAerienne ca left join fetch ca.compagnieAerienneVol left join fetch  where idVol=1
+//cav where cav.compagnieAerienneVolPk=(select v.compagnieAerienneVol.compagnieAerienneVolPk from Vol v where v.id=:idVol)
+//ca left join fetch ca.compagnieAerienneVol where ca.compagnieAerienneVol.numero=:idVol
 @SequenceGenerator(name = "seqCompagnieAerienne", sequenceName = "seq_compagnie_aerienne", allocationSize = 1, initialValue = 1)
 public class CompagnieAerienne {
 
