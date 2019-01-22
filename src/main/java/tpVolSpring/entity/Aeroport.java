@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "airport")
 @SequenceGenerator(name = "seqAeroport", sequenceName = "seq_airport", allocationSize = 1, initialValue = 1)
@@ -27,58 +26,67 @@ public class Aeroport {
 	@ManyToOne
 	@JoinColumn(name = "id_city")
 	private Ville ville;
-	@OneToMany(mappedBy="aeroportDepart")
+	@OneToMany(mappedBy = "aeroportDepart")
 	private List<Vol> volsDepart;
-	@OneToMany(mappedBy="aeroportArrivee")
+	@OneToMany(mappedBy = "aeroportArrivee")
 	private List<Vol> volsArrivee;
-	@OneToMany(mappedBy="key.aeroport")
+	@OneToMany(mappedBy = "key.aeroport")
 	private List<Escale> escales;
-	
-	
-	public Aeroport () {
-		
+
+	public Aeroport() {
+
 	}
+
 	public Aeroport(String nomAeroport, Ville ville) {
 		super();
 		this.nomAeroport = nomAeroport;
 		this.ville = ville;
 	}
+
 	public Long getIdAeroport() {
 		return idAeroport;
 	}
-	
+
 	public String getNomAeroport() {
 		return nomAeroport;
 	}
+
 	public void setNomAeroport(String nomAeroport) {
 		this.nomAeroport = nomAeroport;
 	}
+
 	public Ville getVille() {
 		return ville;
 	}
+
 	public void setVille(Ville ville) {
 		this.ville = ville;
 	}
-	
-	
+
 	public List<Vol> getVolsDepart() {
 		return volsDepart;
 	}
+
 	public void setVolsDepart(List<Vol> volsDepart) {
 		this.volsDepart = volsDepart;
 	}
+
 	public List<Vol> getVolsArrivee() {
 		return volsArrivee;
 	}
+
 	public void setVolsArrivee(List<Vol> volsArrivee) {
 		this.volsArrivee = volsArrivee;
 	}
+
 	public List<Escale> getEscales() {
 		return escales;
 	}
+
 	public void setEscales(List<Escale> escales) {
 		this.escales = escales;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -86,6 +94,7 @@ public class Aeroport {
 		result = prime * result + ((idAeroport == null) ? 0 : idAeroport.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -102,11 +111,5 @@ public class Aeroport {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-}
 
 }
