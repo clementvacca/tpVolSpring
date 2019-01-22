@@ -15,6 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import tpVolSpring.repository.CompagnieAerienneVol;
+
 
 @Entity
 @Table(name = "vol")
