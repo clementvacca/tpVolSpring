@@ -14,4 +14,5 @@ public interface CompagnieAerienneVolRepository extends JpaRepository<CompagnieA
 	//Select c from compagnieaerienne c join compagnie_aerienne_vol cav on c.id_compagnie_aerienne=cav.compagnie_aerienne_id where cav.vol_id=1;
 	@Query("select cav from CompagnieAerienneVol cav where cav.key.vol.idVol=:idVol")
 	public List<CompagnieAerienneVol> findCompagnieAerienne(@Param("idVol") Long idVol);
+	
 }

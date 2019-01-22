@@ -19,14 +19,17 @@ import tpVolSpring.repository.VolRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"/applicationContext.xml"})
-public class Vol {
+public class CompagnieAerienneVolTest {
 		@Autowired
 		private CompagnieAerienneVolRepository compagnieAerienneVolRepository;
+		@Autowired
+		private CompagnieAerienneRepository c;
 
 	@Test
 	public void test() {
 		List<CompagnieAerienneVol> ca=compagnieAerienneVolRepository.findCompagnieAerienne((long) 1);
 		assertNotNull(ca);
+		c.findnomCompagnieAerienne();
 
 	}
 
