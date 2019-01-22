@@ -1,13 +1,10 @@
-package tpVolSpring.repository;
+package tpVolSpring.entity;
 
 import java.io.Serializable;
 
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import tpVolSpring.entity.CompagnieAerienne;
-import tpVolSpring.entity.Vol;
 
 @Embeddable
 public class CompagnieAerienneVolPk implements Serializable{
