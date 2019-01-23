@@ -11,7 +11,7 @@ public class CompagnieAerienneVolPk implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name = "compagnie_aerienne_id")
-	private CompagnieAerienne compagnieAerienneVol;
+	private CompagnieAerienne compagnieAerienne;
 	@ManyToOne
 	@JoinColumn(name = "vol_id")
 	private Vol vol;
@@ -21,16 +21,16 @@ public class CompagnieAerienneVolPk implements Serializable{
 	}
 
 	public CompagnieAerienneVolPk(CompagnieAerienne compagnieAerienneVol, Vol vol) {
-		this.compagnieAerienneVol = compagnieAerienneVol;
+		this.compagnieAerienne = compagnieAerienneVol;
 		this.vol = vol;
 	}
 
 	public CompagnieAerienne getCompagnieAerienneVol() {
-		return compagnieAerienneVol;
+		return compagnieAerienne;
 	}
 
 	public void setCompagnieAerienneVol(CompagnieAerienne compagnieAerienneVol) {
-		this.compagnieAerienneVol = compagnieAerienneVol;
+		this.compagnieAerienne = compagnieAerienneVol;
 	}
 
 	public Vol getVol() {
@@ -45,7 +45,7 @@ public class CompagnieAerienneVolPk implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((compagnieAerienneVol == null) ? 0 : compagnieAerienneVol.hashCode());
+		result = prime * result + ((compagnieAerienne == null) ? 0 : compagnieAerienne.hashCode());
 		result = prime * result + ((vol == null) ? 0 : vol.hashCode());
 		return result;
 	}
@@ -59,10 +59,10 @@ public class CompagnieAerienneVolPk implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		CompagnieAerienneVolPk other = (CompagnieAerienneVolPk) obj;
-		if (compagnieAerienneVol == null) {
-			if (other.compagnieAerienneVol != null)
+		if (compagnieAerienne == null) {
+			if (other.compagnieAerienne != null)
 				return false;
-		} else if (!compagnieAerienneVol.equals(other.compagnieAerienneVol))
+		} else if (!compagnieAerienne.equals(other.compagnieAerienne))
 			return false;
 		if (vol == null) {
 			if (other.vol != null)
