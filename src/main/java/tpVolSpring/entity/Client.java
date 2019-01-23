@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -28,13 +30,13 @@ public abstract class Client {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqClient")
 	@Column(name = "id_client")
 	private Long idClient;
-	@Column(name = "nom_client")
+	@Column(name = "nom_client", nullable=false)
 	private String nom;
 	@Column(name = "numero_tel")
 	private String numeroTel;
 	@Column(name = "numero_fax")
 	private String numeroFax;
-	@Column(name = "email_client")
+	@Column(name = "email_client", nullable=false)
 	private String email;
 	@Embedded
 	@AttributeOverrides({ @AttributeOverride(name = "numero", column = @Column(name = "numero_rue")),
