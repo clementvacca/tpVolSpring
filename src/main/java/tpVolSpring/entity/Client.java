@@ -1,5 +1,7 @@
 package tpVolSpring.entity;
 
+import java.util.List;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -14,9 +16,12 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import tpVol.model.Reservation;
 
 
 
@@ -48,7 +53,8 @@ public abstract class Client {
 	@JoinColumn(name="login")
 	private Login login;
 	
-	
+	@OneToMany
+	private List<Reservation> reservations;
 	
 	public Client() {
 		// TODO Auto-generated constructor stub
@@ -117,6 +123,14 @@ public abstract class Client {
 
 	public void setLogin(Login login) {
 		this.login = login;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
 	}
 
 	@Override

@@ -17,6 +17,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table(name="reservation")
 @SequenceGenerator(name = "seqReservation", sequenceName = "seq_reservation", allocationSize = 1, initialValue = 1)
@@ -37,6 +38,9 @@ public class Reservation {
 	
 	@OneToMany(mappedBy="reservation") // Une seule réservation pour plusieurs vol
 	private List<Vol> vol;
+	@ManyToOne
+	@JoinColumn(name="id_client")
+	private Client client;
 	
 	public Reservation() {
 	}
@@ -66,6 +70,38 @@ public class Reservation {
 		this.numeroReservation = numeroReservation;
 	}
 	
+	public Long getIdReservation() {
+		return idReservation;
+	}
+
+	public void setIdReservation(Long idReservation) {
+		this.idReservation = idReservation;
+	}
+
+	public Passager getPassager() {
+		return passager;
+	}
+
+	public void setPassager(Passager passager) {
+		this.passager = passager;
+	}
+
+	public List<Vol> getVol() {
+		return vol;
+	}
+
+	public void setVol(List<Vol> vol) {
+		this.vol = vol;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
