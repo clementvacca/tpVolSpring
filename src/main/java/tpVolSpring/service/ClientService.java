@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.function.LongToIntFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tpVolSpring.entity.Client;
 import tpVolSpring.entity.ClientPhysique;
@@ -14,6 +15,7 @@ import tpVolSpring.repository.ClientPhysiqueRepository;
 import tpVolSpring.repository.ClientRepository;
 import tpVolSpring.repository.LoginRepository;
 
+@Service
 public class ClientService {
 	
 	@Autowired
