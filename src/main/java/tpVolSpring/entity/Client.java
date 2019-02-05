@@ -21,7 +21,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import tpVol.model.Reservation;
 
 
 
